@@ -119,6 +119,65 @@ button { font-family: inherit; }
 .text-center { text-align: center; }
 .text-center .sec-body { margin-left: auto; margin-right: auto; }
 
+/* ── Hero sub CTA (text link) ───────────────────────────────── */
+.hero__cta-sub {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.52);
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+  padding: 4px 0;
+}
+.hero__cta-sub:hover { color: var(--white); }
+
+/* ── Map embed ───────────────────────────────────────────────── */
+.map-embed {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  display: block;
+  filter: brightness(0.9) saturate(0.85);
+}
+
+/* ── Weather link box ────────────────────────────────────────── */
+.weather-link-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.weather-link-box p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ── Review disclaimer ───────────────────────────────────────── */
+.review-disclaimer {
+  text-align: center;
+  font-size: 0.74rem;
+  color: var(--dim);
+  margin-top: 20px;
+}
+
+/* ── Final CTA text-sub link ─────────────────────────────────── */
+.final-btns .btn-sub {
+  font-size: 0.8rem;
+  color: var(--dim);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+.final-btns .btn-sub:hover { color: var(--muted); }
+
 /* ── Scroll Reveal ──────────────────────────────────────────── */
 .reveal {
   opacity: 0;
