@@ -17,10 +17,59 @@
 <body>
 
 <!-- =====================================================
-     STICKY CTA BAR
+     NAVIGATION
+===================================================== -->
+<nav class="site-nav" id="siteNav">
+  <div class="container">
+    <div class="site-nav__inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="site-nav__logo">
+        <img src="images/logo.png" alt="GRAVITATE OSAKA">
+        <span class="site-nav__logo-text">GRAVITATE OSAKA</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="site-nav__links">
+        <li><a href="#about">施設について</a></li>
+        <li><a href="#experience">体験の流れ</a></li>
+        <li><a href="#activities">アクティビティ</a></li>
+        <li><a href="#pricing">料金</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <a href="#reservation" class="btn btn-primary site-nav__cta">予約する →</a>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="site-nav__hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <ul class="mobile-drawer__links">
+    <li><a href="#about"      class="drawer-link">施設について</a></li>
+    <li><a href="#experience" class="drawer-link">体験の流れ</a></li>
+    <li><a href="#activities" class="drawer-link">アクティビティ</a></li>
+    <li><a href="#pricing"    class="drawer-link">料金</a></li>
+    <li><a href="#access"     class="drawer-link">アクセス</a></li>
+  </ul>
+  <a href="#reservation" class="btn btn-primary btn-primary--lg drawer-link">今すぐ予約する →</a>
+</div>
+
+
+<!-- =====================================================
+     STICKY CTA BAR (mobile)
 ===================================================== -->
 <div class="sticky-bar" id="stickyBar">
-  <div class="sticky-bar-text">
+  <div class="sticky-bar__text">
     <small>入園無料 / ブリッジウォーク</small>
     <strong>1,100円〜 今すぐ予約</strong>
   </div>
@@ -33,68 +82,68 @@
 ===================================================== -->
 <section class="hero" id="hero">
 
-  <!-- Slideshow -->
-  <div class="hero-slides" aria-hidden="true">
-    <div class="hero-slide" style="background-image: url('images/aerial-01.jpg')"></div>
-    <div class="hero-slide" style="background-image: url('images/aerial-06.jpg')"></div>
-    <div class="hero-slide" style="background-image: url('images/night-01.jpg')"></div>
-  </div>
-  <div class="hero-overlay" aria-hidden="true"></div>
+  <!-- Single background image (no carousel) -->
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__overlay" aria-hidden="true"></div>
 
-  <!-- Text -->
-  <div class="hero-content">
-    <img src="images/logo.png" alt="GRAVITATE OSAKA" class="hero-logo">
-    <p class="hero-eyebrow">GODA BRIDGE — 大阪府茨木市</p>
-    <h1 class="hero-title">
+  <!-- Content -->
+  <div class="hero__content">
+    <img src="images/logo.png" alt="GRAVITATE OSAKA" class="hero__logo">
+    <p class="hero__eyebrow">GODA BRIDGE — 大阪府茨木市</p>
+    <h1 class="hero__title">
       <em>420m</em>先に、<br>日本一の空がある。
     </h1>
-    <p class="hero-sub">
+    <p class="hero__sub">
       高さ55m。ダム湖の上を渡る。<br>
       怖い。揺れる。——でも、その先に。
     </p>
-    <div class="hero-cta">
-      <a href="#reservation" class="btn btn-primary lg pulse">今すぐ予約する →</a>
+    <div class="hero__cta">
+      <a href="#reservation" class="btn btn-primary btn-primary--lg btn-primary--pulse">今すぐ予約する →</a>
+      <a href="#experience"  class="btn btn-ghost">体験の流れを見る</a>
     </div>
   </div>
 
-  <!-- Slideshow dots -->
-  <div class="hero-dots" role="tablist" aria-label="スライド切り替え">
-    <button class="hero-dot active" role="tab" aria-label="スライド1"></button>
-    <button class="hero-dot" role="tab" aria-label="スライド2"></button>
-    <button class="hero-dot" role="tab" aria-label="スライド3"></button>
+  <!-- Scroll hint -->
+  <div class="hero__scroll" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="hero__scroll-line"></div>
   </div>
+
 </section>
 
 
 <!-- =====================================================
      STATS
 ===================================================== -->
-<section class="stats-section" id="about">
-  <div class="stats-bg" aria-hidden="true"></div>
-  <div class="stats-overlay" aria-hidden="true"></div>
-  <div class="sec">
-    <span class="sec-label tc reveal">SPECS &amp; FACTS</span>
-    <h2 class="sec-title tc reveal delay-1">数字が、すべてを語る。</h2>
-    <div class="rule center reveal delay-2"></div>
+<section class="stats-section section-pad" id="about">
+  <div class="stats-section__bg" aria-hidden="true"></div>
+  <div class="stats-section__overlay" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="text-center">
+      <span class="sec-label reveal">SPECS &amp; FACTS</span>
+      <h2 class="sec-title reveal d1">数字が、すべてを語る。</h2>
+      <div class="rule rule--center reveal d2"></div>
+    </div>
 
     <div class="stats-grid">
       <div class="stat-card reveal">
-        <div class="stat-icon">🌉</div>
+        <span class="stat-icon">🌉</span>
         <div class="stat-num" data-count="420" data-suffix="m">0m</div>
         <p class="stat-label">日本一長い<br>歩行者専用吊り橋</p>
       </div>
-      <div class="stat-card reveal delay-1">
-        <div class="stat-icon">🏔️</div>
+      <div class="stat-card reveal d1">
+        <span class="stat-icon">🏔️</span>
         <div class="stat-num" data-count="55" data-suffix="m">0m</div>
         <p class="stat-label">湖面からの高さ<br>足元は透ける</p>
       </div>
-      <div class="stat-card reveal delay-2">
-        <div class="stat-icon">👥</div>
+      <div class="stat-card reveal d2">
+        <span class="stat-icon">👥</span>
         <div class="stat-num" data-count="1800" data-suffix="人">0人</div>
         <p class="stat-label">同時に橋上に<br>立てる設計容量</p>
       </div>
-      <div class="stat-card reveal delay-3">
-        <div class="stat-icon">📅</div>
+      <div class="stat-card reveal d3">
+        <span class="stat-icon">📅</span>
         <div class="stat-num" data-count="100000" data-suffix="人">0人</div>
         <p class="stat-label">オープン約5ヶ月で<br>来場者10万人突破</p>
       </div>
@@ -104,45 +153,54 @@
 
 
 <!-- =====================================================
-     JOURNEY / EXPERIENCE STEPS
+     EXPERIENCE / JOURNEY
 ===================================================== -->
-<section class="journey-section" id="experience">
-  <div class="sec">
+<section class="experience-section section-pad" id="experience">
+  <div class="container">
     <span class="sec-label reveal">YOUR EXPERIENCE</span>
-    <h2 class="sec-title reveal delay-1">渡る前から、<br>物語は始まっている。</h2>
-    <p class="sec-body reveal delay-2">
+    <h2 class="sec-title reveal d1">渡る前から、<br>物語は始まっている。</h2>
+    <p class="sec-body reveal d2">
       「行けばよかった」ではなく「行ってよかった」に変わる体験が、ここにある。
     </p>
 
-    <div class="steps" style="margin-top:48px;">
+    <div class="experience-steps">
 
-      <div class="step reveal">
-        <div class="step-dot">😬</div>
-        <div class="step-body">
+      <!-- STEP 01 -->
+      <div class="experience-step reveal">
+        <div class="experience-step__img-wrap">
+          <img src="images/walk-03.jpg" alt="橋のたもとから見上げる景色" loading="lazy">
+        </div>
+        <div class="experience-step__body">
           <p class="step-num">STEP 01 — 橋のたもと</p>
+          <span class="step-emoji">😬</span>
           <h3 class="step-title">「ここまで来たか」<br>という感覚</h3>
           <p class="step-desc">右岸側の主塔は高さ60m。下を見ると、吸い込まれそうな湖面。思っていた10倍、怖い。それでも——来た、やるぞ、という気持ちが同時に生まれる。</p>
-          <img src="images/walk-03.jpg" alt="橋のたもとから見上げる景色" class="step-img" loading="lazy">
         </div>
       </div>
 
-      <div class="step reveal delay-1">
-        <div class="step-dot">😱</div>
-        <div class="step-body">
+      <!-- STEP 02 (reverse on PC) -->
+      <div class="experience-step experience-step--reverse reveal">
+        <div class="experience-step__img-wrap">
+          <img src="images/walk-01.jpg" alt="橋の上から見える湖面" loading="lazy">
+        </div>
+        <div class="experience-step__body">
           <p class="step-num">STEP 02 — 橋の中央部</p>
+          <span class="step-emoji">😱</span>
           <h3 class="step-title">足元が透ける。<br>橋が揺れる。</h3>
           <p class="step-desc">格子状の床から、55m下の湖面が見える。風に吹かれると橋全体がゆっくり動く。「怖い！」と叫びたくなる。隣にいる人の手を、思わず握る。</p>
-          <img src="images/walk-01.jpg" alt="橋の上から見える湖面" class="step-img" loading="lazy">
         </div>
       </div>
 
-      <div class="step reveal delay-2">
-        <div class="step-dot">🌅</div>
-        <div class="step-body">
+      <!-- STEP 03 -->
+      <div class="experience-step reveal">
+        <div class="experience-step__img-wrap">
+          <img src="images/aerial-06.jpg" alt="ダム湖を渡る橋の全景" loading="lazy">
+        </div>
+        <div class="experience-step__body">
           <p class="step-num">STEP 03 — 渡り終えたとき</p>
+          <span class="step-emoji">🌅</span>
           <h3 class="step-title">この景色が、<br>「来てよかった」に変わる。</h3>
           <p class="step-desc">420m歩き切ったとき、達成感が押し寄せる。ダム湖と山並みと空——何もない、だからこそ美しい景色。夜はレインボーに輝く。</p>
-          <img src="images/aerial-06.jpg" alt="ダム湖を渡る橋の全景" class="step-img" loading="lazy">
         </div>
       </div>
 
@@ -154,17 +212,17 @@
 <!-- =====================================================
      ACTIVITIES GRID
 ===================================================== -->
-<section class="activities-section" id="activities">
-  <div class="sec">
+<section class="activities-section section-pad" id="activities">
+  <div class="container">
     <span class="sec-label reveal">ACTIVITIES</span>
-    <h2 class="sec-title reveal delay-1">渡るだけじゃない。<br>飛んで、登って、揺れる。</h2>
+    <h2 class="sec-title reveal d1">渡るだけじゃない。<br>飛んで、登って、揺れる。</h2>
 
     <div class="act-grid">
 
-      <!-- wide: ブリッジウォーク -->
-      <div class="act-card wide reveal">
+      <!-- ブリッジウォーク（wide） -->
+      <div class="act-card act-card--wide reveal">
         <img src="images/walk-05.jpg" alt="ブリッジウォーク" loading="lazy">
-        <div class="act-card-overlay">
+        <div class="act-card__overlay">
           <p class="act-tag">BRIDGE WALK</p>
           <p class="act-name">ブリッジウォーク</p>
           <p class="act-price">¥1,100</p>
@@ -173,9 +231,9 @@
       </div>
 
       <!-- バンジー -->
-      <div class="act-card reveal delay-1">
+      <div class="act-card reveal d1">
         <img src="images/bungee-01.jpg" alt="ブリッジバンジー" loading="lazy">
-        <div class="act-card-overlay">
+        <div class="act-card__overlay">
           <p class="act-tag">BUNGEE</p>
           <p class="act-name">ブリッジバンジー</p>
           <p class="act-price">要確認</p>
@@ -183,14 +241,25 @@
         </div>
       </div>
 
+      <!-- スイング -->
+      <div class="act-card reveal d2">
+        <img src="images/swing-01.jpg" alt="ブリッジスイング" loading="lazy">
+        <div class="act-card__overlay">
+          <p class="act-tag">SWING</p>
+          <p class="act-name">ブリッジスイング</p>
+          <p class="act-price">要確認</p>
+          <p class="act-desc">橋から大きく振り子のように揺れる。</p>
+        </div>
+      </div>
+
       <!-- クライム -->
-      <div class="act-card reveal delay-2">
+      <div class="act-card reveal d3">
         <img src="images/climb-top-01.jpg" alt="ブリッジクライム" loading="lazy">
-        <div class="act-card-overlay">
+        <div class="act-card__overlay">
           <p class="act-tag">CLIMB</p>
           <p class="act-name">ブリッジクライム</p>
           <p class="act-price">要確認</p>
-          <p class="act-desc">主塔の頂点まで登る。</p>
+          <p class="act-desc">主塔の頂点まで登る。大阪を一望できる。</p>
         </div>
       </div>
 
@@ -203,20 +272,58 @@
      NIGHT SECTION
 ===================================================== -->
 <section class="night-section" id="night">
-  <div class="night-bg" aria-hidden="true"></div>
-  <div class="night-overlay" aria-hidden="true"></div>
-  <div class="night-content">
-    <span class="sec-label reveal">NIGHT ILLUMINATION</span>
-    <h2 class="sec-title reveal delay-1">
-      夜は、もう一つの<br>GRAVITATEになる。
-    </h2>
-    <p class="sec-body reveal delay-2">
-      虹色7色に輝くライトアップが橋を包む。<br>
-      昼とはまったく別の景色が、湖面に映る。<br>
-      日帰りでは帰れなくなる夜。
-    </p>
-    <div style="margin-top:32px;" class="reveal delay-3">
-      <a href="#reservation" class="btn btn-primary">夜の体験を予約する →</a>
+  <div class="night-section__bg" aria-hidden="true"></div>
+  <div class="night-section__overlay" aria-hidden="true"></div>
+  <div class="night-section__content">
+    <div class="container">
+      <span class="sec-label reveal">NIGHT ILLUMINATION</span>
+      <h2 class="sec-title reveal d1">
+        夜は、もう一つの<br>GRAVITATEになる。
+      </h2>
+      <p class="sec-body reveal d2">
+        虹色7色に輝くライトアップが橋を包む。<br>
+        昼とはまったく別の景色が、湖面に映る。<br>
+        日帰りでは帰れなくなる夜。
+      </p>
+      <div style="margin-top:32px;" class="reveal d3">
+        <a href="#reservation" class="btn btn-primary btn-primary--lg">夜の体験を予約する →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     SOCIAL PROOF / REVIEWS
+===================================================== -->
+<section class="reviews-section section-pad" id="reviews">
+  <div class="container">
+    <div class="text-center">
+      <span class="sec-label reveal">REVIEWS</span>
+      <h2 class="sec-title reveal d1">実際に渡った人の、声。</h2>
+      <div class="rule rule--center reveal d2"></div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">「正直なめてた。でも橋の中央に来た瞬間、足がすくんだ。揺れる、透ける、怖い。でも渡り終えた達成感はすごかった。彼女と来て本当によかった。」</p>
+        <p class="review-author">20代・カップル</p>
+      </div>
+
+      <div class="review-card reveal d1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">「高所恐怖症なのに行ってしまった。手が震えた。でも渡り終えたら泣きそうになった。景色より達成感が印象に残っている。また行きたい。」</p>
+        <p class="review-author">30代・女性</p>
+      </div>
+
+      <div class="review-card reveal d2">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-text">「夜のライトアップがきれいすぎて言葉がなかった。橋が虹色に光って、湖面に映って。写真では伝わらない。行かないと絶対わからない景色だと思う。」</p>
+        <p class="review-author">20代・友人グループ</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -225,17 +332,18 @@
 <!-- =====================================================
      PRICING
 ===================================================== -->
-<section class="pricing-section" id="pricing">
-  <div class="sec">
+<section class="pricing-section section-pad" id="pricing">
+  <div class="container--narrow">
     <span class="sec-label reveal">PRICING</span>
-    <h2 class="sec-title reveal delay-1">料金は、<br>シンプルです。</h2>
+    <h2 class="sec-title reveal d1">料金は、<br>シンプルです。</h2>
 
-    <div class="price-notice reveal delay-2">
+    <div class="price-notice reveal d2">
       <span>🎉</span>
       <span>入園は<strong>無料</strong>。橋を渡るのに 1,100円 だけです。</span>
     </div>
 
     <div class="price-cards">
+
       <div class="price-card reveal">
         <div class="price-icon">🚶</div>
         <div class="price-info">
@@ -244,12 +352,12 @@
           <div class="price-note">ダムパークいばきた（吊り橋エリア外）</div>
         </div>
         <div class="price-right">
-          <div class="price-num free">無料</div>
+          <div class="price-amount price-amount--free">無料</div>
           <div class="price-yen">FREE</div>
         </div>
       </div>
 
-      <div class="price-card featured reveal delay-1">
+      <div class="price-card price-card--featured reveal d1">
         <div class="price-icon">🌉</div>
         <div class="price-info">
           <div class="price-name">ブリッジウォーク</div>
@@ -257,12 +365,12 @@
           <div class="price-note">GODA BRIDGEを渡る / 往復420m</div>
         </div>
         <div class="price-right">
-          <div class="price-num">1,100</div>
+          <div class="price-amount">1,100</div>
           <div class="price-yen">円（税込）</div>
         </div>
       </div>
 
-      <div class="price-card reveal delay-2">
+      <div class="price-card reveal d2">
         <div class="price-icon">🪂</div>
         <div class="price-info">
           <div class="price-name">バンジー / スイング / クライム</div>
@@ -270,14 +378,100 @@
           <div class="price-note">予約制・公式サイトで詳細確認</div>
         </div>
         <div class="price-right">
-          <div class="price-num" style="font-size:1.1rem;line-height:1.8;">要確認</div>
+          <div class="price-amount" style="font-size:1.1rem;line-height:1.8;">要確認</div>
           <div class="price-yen">公式サイトへ</div>
         </div>
       </div>
+
     </div>
 
-    <div class="pricing-cta reveal delay-3">
-      <a href="#reservation" class="btn btn-primary full lg">今すぐ予約する →</a>
+    <div class="pricing-cta reveal d3">
+      <a href="#reservation" class="btn btn-primary btn-primary--lg btn-primary--full">今すぐ予約する →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+<section class="faq-section section-pad" id="faq">
+  <div class="container--narrow">
+    <span class="sec-label reveal">FAQ</span>
+    <h2 class="sec-title reveal d1">よくある質問</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          雨の日でも行けますか？
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            雨天でも入場・ブリッジウォークは原則通常通り行えます。ただし、<strong>風速10m以上の場合は一部アクティビティが中止になる</strong>場合があります。バンジー・スイング・クライムをご予定の方は、当日の天気情報を事前に確認してください。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          子どもも渡れますか？
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            ブリッジウォークは年齢制限はありません。小さなお子様連れでも楽しめます。バンジー・スイング・クライムなどのアドバンスアクティビティは年齢・身長・体重制限が設けられています。詳細は公式サイトでご確認ください。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          予約は必要ですか？
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            ブリッジウォーク（1,100円）は予約なしで当日入場できます。バンジー・スイング・クライムは<strong>事前予約制</strong>です。混雑日は満員になることがあるため、早めの予約をおすすめします。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          駐車場はありますか？
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            ダムパークいばきた内に駐車場があります。週末・祝日は混雑するため、公共交通機関の利用を推奨しています。JR茨木駅・阪急茨木市駅からシャトルバスが運行しています（詳細は最新スケジュールをご確認ください）。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          夜間のライトアップはいつですか？
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            日没後から閉館まで、虹色7色のライトアップが実施されています。点灯時刻は季節によって異なります。夜間営業の有無については、公式サイトまたはSNSで最新情報をご確認ください。
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -286,27 +480,31 @@
 <!-- =====================================================
      WEATHER
 ===================================================== -->
-<section class="weather-section" id="weather">
-  <div class="sec">
+<section class="weather-section section-pad" id="weather">
+  <div class="container">
     <span class="sec-label reveal">WEATHER CHECK</span>
-    <h2 class="sec-title reveal delay-1">当日の天気を、<br>事前に確認できます。</h2>
+    <h2 class="sec-title reveal d1">当日の天気を、<br>事前に確認できます。</h2>
 
-    <div class="weather-alert reveal delay-2">
-      <strong>⚠ 天候によるアクティビティ変更について</strong><br>
-      風速10m以上で一部アクティビティが中止になる場合があります。
-      雨天でも入場・橋の通行は可能です。出発前に必ずご確認ください。
-    </div>
+    <div class="weather-inner">
+      <div>
+        <div class="weather-alert reveal d2">
+          <strong>⚠ 天候によるアクティビティ変更について</strong>
+          風速10m以上で一部アクティビティが中止になる場合があります。
+          雨天でも入場・橋の通行は可能です。出発前に必ずご確認ください。
+        </div>
+      </div>
 
-    <!-- ▼ 本番: アウトドア天気.jp のiframeに差し替え -->
-    <div class="weather-placeholder reveal delay-3">
-      <span class="placeholder-icon">🌤️</span>
-      <p>天気ウィジェット</p>
-      <p class="placeholder-sub">アウトドア天気.jp のiframeをここに埋め込みます</p>
+      <!-- ▼ 本番: アウトドア天気.jp のiframeに差し替え -->
+      <div class="weather-placeholder reveal d3">
+        <span class="placeholder-icon">🌤️</span>
+        <p>天気ウィジェット</p>
+        <p class="placeholder-sub">アウトドア天気.jp のiframeをここに埋め込みます</p>
+      </div>
+      <!--
+      <iframe src="[アウトドア天気.jp URL]" width="100%" height="300"
+        frameborder="0" style="border-radius:12px;display:block;" loading="lazy"></iframe>
+      -->
     </div>
-    <!--
-    <iframe src="[アウトドア天気.jp URL]" width="100%" height="300"
-      frameborder="0" style="border-radius:12px;display:block;" loading="lazy"></iframe>
-    -->
   </div>
 </section>
 
@@ -314,54 +512,58 @@
 <!-- =====================================================
      ACCESS
 ===================================================== -->
-<section class="access-section" id="access">
-  <div class="sec">
+<section class="access-section section-pad" id="access">
+  <div class="container">
     <span class="sec-label reveal">ACCESS</span>
-    <h2 class="sec-title reveal delay-1">大阪から、<br>1時間で行けます。</h2>
+    <h2 class="sec-title reveal d1">大阪から、<br>1時間で行けます。</h2>
 
-    <!-- ▼ 本番: GoogleマップのiframeURLを設定 -->
-    <div class="map-placeholder reveal delay-2">
-      <span class="placeholder-icon">🗺️</span>
-      <p>Googleマップ</p>
-      <p class="placeholder-sub">大阪府茨木市 ダムパークいばきた</p>
-    </div>
-    <!--
-    <iframe src="[Google Maps embed URL]" width="100%" height="230"
-      frameborder="0" allowfullscreen
-      style="border-radius:12px;display:block;margin-bottom:24px;" loading="lazy"></iframe>
-    -->
+    <div class="access-inner">
 
-    <div class="access-cards">
-      <div class="access-card reveal">
-        <div class="access-icon">🚃</div>
-        <div>
-          <div class="access-title">電車＋バスでのアクセス</div>
-          <div class="access-detail">
-            JR「茨木駅」→ シャトルバス（毎日運行・約1時間に1本）<br>
-            阪急「茨木市駅」→ 路線バス（土日祝のみ）
+      <!-- ▼ 本番: GoogleマップのiframeURLを設定 -->
+      <div class="map-placeholder reveal d2">
+        <span class="placeholder-icon">🗺️</span>
+        <p>Googleマップ</p>
+        <p class="placeholder-sub">大阪府茨木市 ダムパークいばきた</p>
+      </div>
+      <!--
+      <iframe src="[Google Maps embed URL]" width="100%" height="300"
+        frameborder="0" allowfullscreen
+        style="border-radius:12px;display:block;" loading="lazy"></iframe>
+      -->
+
+      <div class="access-cards reveal d3">
+        <div class="access-card">
+          <div class="access-icon">🚃</div>
+          <div>
+            <div class="access-title">電車＋バスでのアクセス</div>
+            <div class="access-detail">
+              JR「茨木駅」→ シャトルバス（毎日運行・約1時間に1本）<br>
+              阪急「茨木市駅」→ 路線バス（土日祝のみ）
+            </div>
+          </div>
+        </div>
+        <div class="access-card">
+          <div class="access-icon">🚗</div>
+          <div>
+            <div class="access-title">車でのアクセス</div>
+            <div class="access-detail">
+              新名神高速「茨木千提寺IC」すぐ<br>
+              名神高速「茨木IC」からも可（混雑時は公共交通推奨）
+            </div>
+          </div>
+        </div>
+        <div class="access-card">
+          <div class="access-icon">📍</div>
+          <div>
+            <div class="access-title">住所</div>
+            <div class="access-detail">
+              大阪府茨木市大字生保53-1<br>
+              ダムパークいばきた内 GRAVITATE OSAKA
+            </div>
           </div>
         </div>
       </div>
-      <div class="access-card reveal delay-1">
-        <div class="access-icon">🚗</div>
-        <div>
-          <div class="access-title">車でのアクセス</div>
-          <div class="access-detail">
-            新名神高速「茨木千提寺IC」すぐ<br>
-            名神高速「茨木IC」からも可（混雑時は公共交通推奨）
-          </div>
-        </div>
-      </div>
-      <div class="access-card reveal delay-2">
-        <div class="access-icon">📍</div>
-        <div>
-          <div class="access-title">住所</div>
-          <div class="access-detail">
-            大阪府茨木市大字生保53-1<br>
-            ダムパークいばきた内 GRAVITATE OSAKA
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -371,21 +573,22 @@
      FINAL CTA
 ===================================================== -->
 <section class="final-section" id="reservation">
-  <div class="final-bg" aria-hidden="true"></div>
-  <div class="final-overlay" aria-hidden="true"></div>
-  <div class="final-inner">
+  <div class="final-section__bg" aria-hidden="true"></div>
+  <div class="final-section__overlay" aria-hidden="true"></div>
+
+  <div class="final-content">
     <p class="final-eyebrow reveal">RESERVE NOW</p>
-    <h2 class="final-title reveal delay-1">
+    <h2 class="final-title reveal d1">
       「行こう」と思った<br>この瞬間が、タイミングです。
     </h2>
-    <p class="final-sub reveal delay-2">
+    <p class="final-sub reveal d2">
       来年の自分ではなく、今日の自分が行く。<br>
       GODA BRIDGEの空は、待っています。
     </p>
-    <div class="final-btns reveal delay-3">
-      <a href="#" class="btn btn-primary full lg">🎟️ 今すぐ予約する（公式サイト）→</a>
-      <a href="#" class="btn btn-ghost full">じゃらん / アクティビティ一覧を見る</a>
-      <a href="#weather" class="btn btn-ghost full">🌤️ 当日の天気を確認する</a>
+    <div class="final-btns reveal d3">
+      <a href="#" class="btn btn-primary btn-primary--lg">🎟️ 今すぐ予約する（公式サイト）→</a>
+      <a href="#" class="btn btn-ghost">じゃらん / アクティビティ一覧を見る</a>
+      <a href="#weather" class="btn btn-ghost">🌤️ 当日の天気を確認する</a>
     </div>
   </div>
 </section>
@@ -395,11 +598,46 @@
      FOOTER
 ===================================================== -->
 <footer>
-  <img src="images/logo.png" alt="GRAVITATE OSAKA" class="footer-logo-img">
-  <p class="footer-body">
-    大阪府茨木市 ダムパークいばきた内 GODA BRIDGE<br>
-    © 2025 GRAVITATE OSAKA All rights reserved.
-  </p>
+  <div class="container">
+    <div class="footer-inner">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="GRAVITATE OSAKA" class="footer-brand__logo">
+        <p class="footer-brand__desc">
+          日本一長い歩行者専用吊り橋 GODA BRIDGE。<br>
+          大阪府茨木市 ダムパークいばきた内。
+        </p>
+      </div>
+
+      <!-- Links col 1 -->
+      <div class="footer-col">
+        <h4>MENU</h4>
+        <ul>
+          <li><a href="#about">施設について</a></li>
+          <li><a href="#experience">体験の流れ</a></li>
+          <li><a href="#activities">アクティビティ</a></li>
+          <li><a href="#pricing">料金</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </div>
+
+      <!-- Links col 2 -->
+      <div class="footer-col">
+        <h4>ACCESS</h4>
+        <ul>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#weather">天気確認</a></li>
+          <li><a href="#reservation">今すぐ予約する</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 GRAVITATE OSAKA All rights reserved.
+    </div>
+  </div>
 </footer>
 
 
