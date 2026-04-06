@@ -79,41 +79,10 @@
 })();
 
 
-/* ── Counter Animation ──────────────────────────────────── */
-(function initCounters() {
-  const counters = document.querySelectorAll('[data-count]');
-  if (!counters.length) return;
-
-  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-
-  function animateCounter(el) {
-    const target   = parseFloat(el.dataset.count);
-    const suffix   = el.dataset.suffix || '';
-    const decimals = el.dataset.decimals ? parseInt(el.dataset.decimals) : 0;
-    const duration = 1800;
-    const start    = performance.now();
-
-    function tick(now) {
-      const elapsed  = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const val      = target * easeOut(progress);
-      el.textContent = (decimals ? val.toFixed(decimals) : Math.floor(val)).toLocaleString() + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        animateCounter(e.target);
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(el => obs.observe(el));
-})();
+/* ── Counter Animation: removed per design decision ────────
+   Numbers display as static final values from initial render.
+   Emphasis is achieved through size, color, and spacing.
+   ─────────────────────────────────────────────────────────── */
 
 
 /* ── Sticky CTA Bar ─────────────────────────────────────── */
