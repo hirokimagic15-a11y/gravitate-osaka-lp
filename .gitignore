@@ -6,8 +6,5 @@ Thumbs.db
 .vscode/
 *.swp
 
-# Assets (実素材は Git 管理対象外)
+# Assets (動画のみ除外・画像はGit管理)
 assets/video/*.mp4
-assets/img/*.jpg
-assets/img/*.png
-assets/img/*.webp
