@@ -30,6 +30,27 @@
 })();
 
 
+/* ── Experience Card → Activity Tab Link ────────────────── */
+(function initExpCards() {
+  document.querySelectorAll('.exp-card[data-tab-target]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tabName = card.dataset.tabTarget;
+
+      // Activate the matching tab
+      const targetTab = document.querySelector(`.tab[data-tab="${tabName}"]`);
+      if (targetTab) targetTab.click();
+
+      // Scroll to #activity
+      const section = document.getElementById('activity');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+})();
+
+
 /* ── Activity Tab Switching ──────────────────────────────── */
 (function initTabs() {
   const tabs   = document.querySelectorAll('.tab');
