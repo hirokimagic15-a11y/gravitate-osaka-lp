@@ -296,13 +296,15 @@
 
         <div class="weather-wrap">
           <h3 class="access-info__title">当日の天気を確認してから、予約しよう</h3>
-          <div class="weather-widget">
-            <div class="weather-placeholder">
-              <p class="weather-placeholder__icon">☁</p>
-              <p class="weather-placeholder__text">天気ウィジェット</p>
-              <p class="weather-placeholder__note">アウトドア天気.jp の埋め込みコードに差し替えてください</p>
+          <div class="weather-widget" id="weatherWidget">
+            <div class="weather-loading">
+              <span class="weather-loading__dot"></span>
+              <span class="weather-loading__dot"></span>
+              <span class="weather-loading__dot"></span>
             </div>
+            <!-- JS で動的生成 -->
           </div>
+          <p class="weather-source">大阪府茨木市 ・ Open-Meteo 気象データ</p>
         </div>
       </div>
     </div>
