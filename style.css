@@ -118,15 +118,33 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   cursor: pointer;
 }
 
+.hero__ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
 .btn--hero {
   background: var(--color-accent);
   color: #fff;
-  margin-top: 2rem;
 }
 .btn--hero:hover {
   background: var(--color-accent-lt);
   transform: translateY(-3px);
   box-shadow: 0 10px 35px rgba(255, 85, 0, 0.45);
+}
+
+.btn--hero-sub {
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.btn--hero-sub:hover {
+  border-color: rgba(255,255,255,0.7);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .btn--activity {
@@ -378,29 +396,48 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
+  background: var(--color-surface);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
 }
 
 .hook__num {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 12vw, 8rem);
+  font-size: clamp(3.5rem, 10vw, 7rem);
   line-height: 1;
   color: var(--color-gold);
   text-shadow: 0 0 40px rgba(212, 168, 67, 0.4);
   display: block;
 }
 
-.hook__label {
-  font-size: clamp(0.7rem, 2vw, 0.85rem);
-  color: var(--color-sub);
-  letter-spacing: 0.05em;
+.hook__unit {
+  font-size: 0.55em;
+  vertical-align: baseline;
 }
 
-.hook__copy {
+.hook__label {
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.03em;
+  line-height: 1.6;
   text-align: center;
-  font-size: clamp(1rem, 3vw, 1.3rem);
-  font-weight: 700;
-  color: rgba(255,255,255,0.85);
-  margin-top: 1rem;
+}
+
+.hook__voice {
+  font-size: 0.75rem;
+  color: var(--color-sub);
+  line-height: 1.7;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 0.8rem;
+  margin-top: 0.4rem;
+}
+.hook__voice em {
+  font-style: normal;
+  color: var(--color-gold);
+  display: block;
+  margin-top: 0.3rem;
 }
 
 /* Mobile: 水平スクロール対応 */
@@ -545,9 +582,18 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   letter-spacing: 0.05em;
 }
 .exp-card__ja {
-  font-size: 0.8rem;
-  color: var(--color-sub);
-  letter-spacing: 0.08em;
+  font-family: var(--font-ja);
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.04em;
+}
+
+.exp-card__for {
+  font-size: 0.72rem;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
 }
 
 /* ============================================================
@@ -648,12 +694,55 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   line-height: 1.8;
 }
 
+.activity-panel__benefit {
+  font-weight: 700;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: var(--color-accent);
+  line-height: 1.5;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0.8rem;
+}
+
+.activity-panel__meta {
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
 .activity-panel__price {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   color: var(--color-gold);
   line-height: 1;
   letter-spacing: 0.03em;
+}
+
+.activity-panel__time {
+  font-size: 0.8rem;
+  color: var(--color-sub);
+  letter-spacing: 0.04em;
+}
+
+/* Inline testimonial within activity panel */
+.activity-voice {
+  background: var(--color-surface2);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  border-left: 2px solid var(--color-gold);
+}
+
+.activity-voice__text {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+  margin-bottom: 0.4rem;
+}
+
+.activity-voice__author {
+  font-size: 0.72rem;
+  color: var(--color-gold);
+  letter-spacing: 0.06em;
 }
 
 /* ============================================================
@@ -969,7 +1058,81 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
 }
 
 /* ============================================================
-   Section 07: Final CTA + Footer
+   Section 07: FAQ
+============================================================ */
+#faq {
+  padding: var(--section-py) 0;
+  background: var(--color-surface);
+}
+
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background: var(--color-surface2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.faq-item[open] {
+  border-color: rgba(255,85,0,0.3);
+}
+
+.faq-item__q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  cursor: pointer;
+  list-style: none;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+  user-select: none;
+  transition: color var(--transition);
+}
+
+.faq-item__q::-webkit-details-marker { display: none; }
+
+.faq-item__q::after {
+  content: '+';
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+.faq-item[open] .faq-item__q::after {
+  transform: rotate(45deg);
+}
+
+.faq-item[open] .faq-item__q {
+  color: #fff;
+}
+
+.faq-item__a {
+  padding: 0 1.5rem 1.25rem;
+}
+
+.faq-item__a p {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.85;
+}
+
+/* ============================================================
+   Section 08: Final CTA + Footer
 ============================================================ */
 #booking {
   position: relative;
@@ -1035,7 +1198,47 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footer__name {
+  font-family: var(--font-sub);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.6);
+}
+
+.footer__address,
+.footer__hours {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.04em;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__nav a {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.06em;
+  transition: color var(--transition);
+}
+
+.footer__nav a:hover {
+  color: var(--color-accent);
 }
 
 .footer__sns {
