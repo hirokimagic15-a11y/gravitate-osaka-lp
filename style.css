@@ -235,6 +235,8 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 /* Atmosphere overlay — orange glow from bottom */
@@ -711,42 +713,32 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   padding: 0 1rem;
 }
 
-/* Reviews Carousel */
-.reviews {
-  position: relative;
-  overflow: hidden;
-  margin: 0 calc(-1 * var(--container-px));
-  padding: 0 var(--container-px);
-}
-
-.reviews__track {
-  display: flex;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  touch-action: pan-y;
+/* Reviews Grid */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .review-card {
-  flex: 0 0 100%;
-  padding: 2rem clamp(1rem, 4vw, 2.5rem);
+  padding: 1.75rem clamp(1rem, 3vw, 1.75rem);
   background: var(--color-surface2);
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.06);
-  margin: 0 0.5rem;
 }
 
 .review-card__stars {
   color: var(--color-gold);
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
 }
 
 .review-card__text {
-  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 1.85;
   color: rgba(255,255,255,0.85);
   margin-bottom: 1rem;
-  quotes: "「" "」";
 }
 
 .review-card__author {
@@ -756,23 +748,10 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   letter-spacing: 0.06em;
 }
 
-/* Dots */
-.reviews__dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-}
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  transition: background var(--transition), transform var(--transition);
-}
-.dot--active {
-  background: var(--color-accent);
-  transform: scale(1.3);
+@media (max-width: 640px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Social Link */
