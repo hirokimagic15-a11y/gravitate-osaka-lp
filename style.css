@@ -324,6 +324,11 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   margin-bottom: 1.2rem;
 }
 
+.hero__h1 em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
 .hero__sub {
   font-size: clamp(0.8rem, 2.5vw, 1rem);
   color: rgba(255, 255, 255, 0.75);
@@ -361,96 +366,7 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
 }
 
 /* ============================================================
-   Section 02: Hook Numbers
-============================================================ */
-#hook {
-  padding: var(--section-py) 0;
-  background: var(--color-bg);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle radial glow behind numbers */
-#hook::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  background: radial-gradient(ellipse at center, rgba(212,168,67,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.hook__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  margin: 3rem 0;
-  text-align: center;
-}
-
-.hook__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  background: var(--color-surface);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 8px;
-  padding: 2rem 1.5rem;
-}
-
-.hook__num {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 10vw, 7rem);
-  line-height: 1;
-  color: var(--color-gold);
-  text-shadow: 0 0 40px rgba(212, 168, 67, 0.4);
-  display: block;
-}
-
-.hook__unit {
-  font-size: 0.55em;
-  vertical-align: baseline;
-}
-
-.hook__label {
-  font-size: clamp(0.7rem, 2vw, 0.85rem);
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.03em;
-  line-height: 1.6;
-  text-align: center;
-}
-
-.hook__voice {
-  font-size: 0.75rem;
-  color: var(--color-sub);
-  line-height: 1.7;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 0.8rem;
-  margin-top: 0.4rem;
-}
-.hook__voice em {
-  font-style: normal;
-  color: var(--color-gold);
-  display: block;
-  margin-top: 0.3rem;
-}
-
-/* Mobile: 縦積み */
-@media (max-width: 767px) {
-  .hook__grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin: 2rem 0;
-  }
-}
-
-/* ============================================================
-   Section 03: Experience Preview
+   Section 02: Experience Preview
 ============================================================ */
 #experience {
   position: relative;
@@ -509,7 +425,7 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
 /* Experience Cards */
 .experience__cards {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
 }
 
@@ -743,7 +659,15 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
 }
 
 /* ============================================================
-   Section 05: SNS / Reviews
+   Section 05: Reviews
+============================================================ */
+#reviews {
+  padding: var(--section-py) 0;
+  background: var(--color-bg);
+}
+
+/* ============================================================
+   Section 06: SNS / TikTok
 ============================================================ */
 #social {
   padding: var(--section-py) 0;
@@ -1262,6 +1186,89 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   font-size: 0.72rem;
   color: rgba(255,255,255,0.25);
   letter-spacing: 0.1em;
+}
+
+/* ============================================================
+   Section 04b: Experience Flow
+============================================================ */
+#flow {
+  padding: var(--section-py) 0;
+  background: var(--color-surface);
+}
+
+#flow .section-h2 em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.flow__sub {
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  color: var(--color-sub);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.flow__steps {
+  list-style: none;
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .flow__steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .flow__steps { grid-template-columns: repeat(4, 1fr); }
+}
+
+.flow__step {
+  background: var(--color-bg);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 1.75rem 1.5rem;
+}
+
+.flow__num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--color-accent);
+  opacity: 0.5;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.flow__step h3 {
+  font-weight: 700;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.flow__step p {
+  font-size: 0.875rem;
+  color: var(--color-sub);
+  line-height: 1.8;
+}
+
+.flow__step small {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.flow__cta-hint {
+  text-align: center;
+  margin: clamp(2rem, 5vw, 3rem) 0 0.75rem;
+  color: var(--color-sub);
+  font-size: 0.9rem;
+}
+
+.flow__btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 /* ============================================================

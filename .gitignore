@@ -8,3 +8,6 @@ Thumbs.db
 
 # Assets (動画のみ除外・画像はGit管理)
 assets/video/*.mp4
+
+# Dependencies
+node_modules/
